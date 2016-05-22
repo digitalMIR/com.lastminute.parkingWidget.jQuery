@@ -1,0 +1,22 @@
+{
+  "departureAirport": "Bergamo Orio al Serio",
+  "map": "http://lorempixel.com/370/390",
+  "features": [
+    "Parcheggio ParkinGo della tipologia selezionata",
+    "Navetta da/per aeroporto 24h",
+    "Assicurazione incendio/furto",
+    "Vigilanza e custodia del mezzo 24h",
+    "Ripristino gratuito del calo di batteria della tua auto"
+  ],
+  "parkings": [{
+    "id": 123,
+    "title": "Posto auto coperto"
+  }, {
+    "id": 456,
+    "title": "Posto auto scoperto"
+  }],
+  "dictionary": {
+    "bookYourParking": "Prenota il tuo parcheggio a",
+    "featuresTitle": "Sono inclusi i seguenti servizi:"
+  }
+}
