@@ -21,6 +21,18 @@
 
         <!-- Add your site or application content here -->
 	<div id="parking-widget">
+
+		<!-- option 1: if QUnit is not loaded and need repeat unit test -->
+		<script>
+			var parkingWidgetUnitTestActive = true;
+			if ( parkingWidgetUnitTestActive ) { //unit test active
+				document.write('<div id="qunit"></div>');
+				document.write('<div id="qunit-fixture"></div>');
+				window.QUnit || document.write('<script src="parkingWidget/js/vendor/qunit-1.23.1.js"><\/script>');
+			}
+		</script>
+		<script src="parkingWidget/js/test/tests.js"></script>
+
 		<!-- option 1: if jQuery is not loaded -->
 		<script>window.jQuery || document.write('<script src="parkingWidget/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
 		<!-- option 2: if Mustache is not loaded -->

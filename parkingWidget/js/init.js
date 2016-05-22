@@ -69,6 +69,10 @@ $.noConflict();
             $("#parking-widget-features-body").toggle();
           });
 
+          if ( parkingWidgetUnitTestActive ) {
+            $('head').append('<link rel="stylesheet" type="text/css" href="parkingWidgetName/css/vendor/qunit-1.23.1.css">');
+          }
+
         }, "html");
 
       })
