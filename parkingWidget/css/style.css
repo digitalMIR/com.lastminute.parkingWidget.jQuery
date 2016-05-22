@@ -1,0 +1,49 @@
+#parking-widget-container {
+  padding: 0 7px 5px;
+  max-width: 737px;
+  max-height: 475px;
+
+  overflow-y: visible;
+  font-size: 14px;
+  letter-spacing: -1px;
+
+  /* TEMP */
+  border: 3px solid black;
+}
+
+#parking-widget-container #parking-widget-slot h1,
+#parking-widget-container #parking-widget-features h1 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+#parking-widget-container #parking-widget-slot ul {
+  list-style: square;
+}
+
+#parking-widget-container #parking-widget-slot ul li {
+  margin-left: -20px;
+  line-height: 55px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 90%;
+}
+
+#parking-widget-container #parking-widget-features h1 {
+  cursor: pointer;
+}
+
+#parking-widget-container #parking-widget-features-body {
+  display: none;
+}
+
+#parking-widget-container #parking-widget-features-body  ul {
+  list-style: none;
+  margin-left: 50%;
+  min-height: 245px;
+}
+
+#parking-widget-container #parking-widget-features-body  ul li{
+  margin-left: -10px;
+  font-size: 95%;
+}

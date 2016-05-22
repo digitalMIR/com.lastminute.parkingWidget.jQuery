@@ -1,3 +1,23 @@
-<div id="parking-widget-container"> 
-  <p>departureAirport: <b>{{ departureAirport }}</b> </p>
-</div>
+<script id="tpl-parking-widget" type="text/html">
+  <div id="parking-widget-container"> 
+    <section id="parking-widget-slot">
+      <h1>{{dictionary.bookYourParking}} {{departureAirport}}</h1>
+      <ul> 
+        {{#parkings}} 
+          <li onClick="ParkingWidget.add('{{id}}', '{{title}}')"><a> {{title}} </a></li> 
+        {{/parkings}} 
+      </ul>
+    </section>
+    <section id="parking-widget-features">
+      <h1 id="parking-widget-features-title">{{dictionary.featuresTitle}}</h1>
+      <div id="parking-widget-features-body">
+        <img src="{{map}}" alt="mappa" height="260" width="370" align="left" />
+        <ul> 
+          {{#features}} 
+            <li> {{.}} </li> 
+          {{/features}} 
+        </ul>
+      </div>
+    </section>
+  </div>
+</script>

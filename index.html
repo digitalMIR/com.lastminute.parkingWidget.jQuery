@@ -20,13 +20,16 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-	<div id="parking-widget-header">
+	<div id="parking-widget">
+		<!-- option 1: if jQuery is not loaded -->
 		<script>window.jQuery || document.write('<script src="parkingWidget/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+		<!-- option 2: if Mustache is not loaded -->
 		<script>window.Mustache || document.write('<script src="parkingWidget/js/vendor/mustache-2.2.1.min.js"><\/script>')</script>
+		<!-- mandatory init script -->
 		<script src="parkingWidget/js/init.js"></script>
 	</div>
-	<div id="parking-widget"><div>
 
+	<!-- FIXME -->
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
