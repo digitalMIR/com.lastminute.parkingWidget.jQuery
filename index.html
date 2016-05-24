@@ -19,13 +19,13 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
+        <!-- Astorino Marco 24/05/2016 INIT lastminute.com parkingWidget exercise -->
 	<div id="parking-widget">
 
 		<!-- option 1: if QUnit is not loaded and need repeat unit test -->
 		<script>
-			var parkingWidgetUnitTestActive = true;
-			if ( parkingWidgetUnitTestActive ) { //unit test active
+			var parkingWidgetUnitTestActive = false; //set true for execute regression unit test
+			if ( parkingWidgetUnitTestActive ) { 
 				document.write('<div id="qunit"></div>');
 				document.write('<div id="qunit-fixture"></div>');
 				window.QUnit || document.write('<script src="parkingWidget/js/vendor/qunit-1.23.1.js"><\/script>');
@@ -40,8 +40,16 @@
 		<!-- mandatory init script -->
 		<script src="parkingWidget/js/init.js"></script>
 	</div>
+	<!-- TEST communication between widget and WebApp -->
+        <div style="display: none" />
+		<ul>
+        	<li><a href="#" onClick="console.log(ParkingWidget.getBasket(123));">get basket posto auto coperto</a></li>
+		<li><a href="#" onClick="console.log(ParkingWidget.getBasket(456));">get basket posto auto scoperto</a></li>
+		</ul>
+	</div>
+	<!-- END TEST communication between widget and WebApp -->
+        <!-- Astorino Marco 24/05/2016 END lastminute.com parkingWidget exercise -->
 
-	<!-- FIXME -->
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>

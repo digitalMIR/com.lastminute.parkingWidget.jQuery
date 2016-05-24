@@ -1,3 +1,10 @@
+/**
+ * Astorino Marco
+ * dfinger.mir@gmail.com
+ *
+ * lastMinute.com parkingWidget
+ */
+
 $.noConflict();
 
   var parkingWidgetName = "parkingWidget";
@@ -6,6 +13,8 @@ $.noConflict();
     model: parkingWidgetName+'/model/model.json',
     template: parkingWidgetName+'/template.html',
     template_id: '#tpl-parking-widget',
+    featuresTitle: '#parking-widget-features-title',
+    featuresBody: '#parking-widget-features-body',
     style: parkingWidgetName+'/css/style.css',
     ll_TRACE: { name: 'TRACE', value: 0},
     ll_DEBUG: { name: 'DEBUG', value: 1},
@@ -40,7 +49,6 @@ $.noConflict();
       parkingWidget.connection.onerror = function(event){
         parkingWidget.log( parkingWidget.ll_INFO, "socket onerror[" + event.data + "]");
       }
-
     },
     render: function() {
 
@@ -64,13 +72,12 @@ $.noConflict();
           $( parkingWidget.id ).append( Mustache.render(template, parkingWidget.data) );
           parkingWidget.log( parkingWidget.ll_INFO, "template rendered");
 
-          $('#parking-widget-features-title').click(function(){
-            //$("#parking-widget-features-body").slideToggle("slow");
-            $("#parking-widget-features-body").toggle();
+          $(parkingWidget.featuresTitle).click(function(){
+            $(parkingWidget.featuresBody).toggle();
           });
 
           if ( parkingWidgetUnitTestActive ) {
-            $('head').append('<link rel="stylesheet" type="text/css" href="parkingWidgetName/css/vendor/qunit-1.23.1.css">');
+            $('head').append('<link rel="stylesheet" type="text/css" href="'+parkingWidgetName+'/css/vendor/qunit-1.23.1.css">');
           }
 
         }, "html");
@@ -89,9 +96,15 @@ $.noConflict();
       var parkingWidget = this;
       parkingWidget.log( ParkingWidget.ll_TRACE, "[add called]");
       parkingWidget[id] = parkingWidget[id]+1 || 1;
-      alert("un " + title + " è stato aggiunto al carrello.\n"+
-	"Il carrello ne contiene " + parkingWidget[id] + "." );
-      parkingWidget.notify( id, title );
+      if ( !parkingWidgetUnitTestActive ) {
+        alert("un " + title + " è stato aggiunto al carrello.\n"+
+	  "Il carrello ne contiene " + parkingWidget[id] + "." );
+        parkingWidget.notify( id, title );
+      }
+    },
+    getBasket: function( id ) { //communicator for web App
+      var parkingWidget = this;
+      return parkingWidget[id];
     },
     notify: function( id ) {
       var parkingWidget = this;
