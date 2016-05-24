@@ -3,7 +3,7 @@
   max-width: 737px;
   max-height: 475px;
 
-  overflow-y: visible;
+  overflow-y: auto;
   font-size: 14px;
   letter-spacing: -1px;
 
@@ -41,6 +41,12 @@
   list-style: none;
   margin-left: 50%;
   min-height: 245px;
+}
+
+@media screen and (max-width: 470px) {
+  #parking-widget-container #parking-widget-features-body  ul {
+    margin-left: auto;
+  }
 }
 
 #parking-widget-container #parking-widget-features-body  ul li{
